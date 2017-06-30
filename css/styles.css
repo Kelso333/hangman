@@ -10,17 +10,14 @@ h1, h2 {
 
 h3 {
     font-size: 30px;
-    margin: -90px 95px;
 }
 
 h3#message {
     font-size: 25px;
     text-align: center;
-    margin: -120px 0;
 }
 
 div#diagram {
-    margin: 180px auto;
     border: 2px solid red;
     height: 450px;
     width: 650px;
@@ -29,14 +26,12 @@ div#diagram {
 div.rightbutton {
     border: 1px solid blue;
     float: right;
-    margin: 240px 90px;
     width: 90px;
     height: 40px;
     text-align: center;
 }
 
 div#newgame {
-    margin: 240px -35px;
 }
 
 div#hint {
@@ -44,6 +39,5 @@ div#hint {
     width: 90px;
     height: 40px;
     text-align: center;
-    margin: 400px 590px;
     
 }
