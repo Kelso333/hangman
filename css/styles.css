@@ -15,7 +15,6 @@ div#wrongLetter {
 
 div.rightbutton {
     border: 1px solid blue;
-    float: right;
     width: 90px;
     height: 40px;
     text-align: center;

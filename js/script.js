@@ -4,11 +4,19 @@
 console.log('loaded');
 
 
-var gameWords = ['BENZ', 'JAGUAR', 'TESLA'];
+var gameWords = [
+    'BENZ', 
+    'JAGUAR', 
+    'TESLA', 
+    'LASSENS', 
+    'RALPHS', 
+    'IN N OUT', 
+    'CHIPOTLE'
+    ];
 
 /*----- app's state (variables) -----*/
 
-var categories;
+var hint;
 var usedLetter;
 var secretWord; /*holds the randomly chosen word from the words array*/
 var playerSecretWord;
@@ -52,16 +60,18 @@ function handleLetterClick(evt) {
         } else {
             return;
         }
-    
+
     render();
 }
 
-/* function randomCategories(vehicles) {
-    var randCategories = Math.floor(Math.random() * 4);
-    randCategories = randomCategories();
-    if()
+function smallHint() {
+    var getHint = document.getElementById('hint');
+    hint = getHint;
+    if(secretWord === 'BENZ') {
+        console.log('This is a luxury vehicle.');
+    }
+}
 
-} */
 
 /* function pictures() {
 
@@ -75,8 +85,9 @@ function handleLetterClick(evt) {
     imgThree: 'left foot',
     imgTwo: 'right foot',
     imgOne: 'body turns red'
- };
+    };
 } */
+
 
 resetGame(); 
 
@@ -91,9 +102,8 @@ function resetGame () {
     render();
 }
 
-
 function getRandomIntegers(max) {
-    return Math.floor(Math.random() * max +1);
+    return Math.floor(Math.random() * max);
 }
 
 function render() {
