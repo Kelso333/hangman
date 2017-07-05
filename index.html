@@ -4,58 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+     crossorigin="anonymous"></script>
     <title>Hangman Project 1</title>
 </head>
 <body id="wrapper">
 
     <h1>Hangman</h1>
 
-    <h2># of chances left <br/>
-        Category
-    </h2>
+    <h2>chances left: <div id="wrongLetter"></div></h2>
+    <h2 id="catergory">category</h2>
 
-    <h3>Score: 0</h3>
+    <div id="diagram">
+        <img id="mainpic" src ="images/main.png">
+        <img id="head" class="bodypart" src="">
+        <img id="torso" class="bodypart" src="">
+        <img id="leftarm" class="bodypart" src="">
+        <img id="rightarm" class="bodypart" src="">
+        <img id="leftleg" class="bodypart" src="">
+        <img id="rightleg" class="bodypart" src="">
+        <img id="leftfoot" class="bodypart" src="">
+        <img id="rightfoot" class="bodypart" src="">
+        <img id="redbody" class="bodypart" src="">
+    </div>
 
-    <div id="diagram"> </div>
-
-    <h3 id="message">Game Over/You win/Clue</h3>
-
+    <div id="guess"></div>
     <br>
     <br>
     <br>
 
-    <table>
+    <table id="table">
         <tbody>
             <tr>
-                <td class="letter">A</td>
-                <td class="letter">B</td>
-                <td class="letter">C</td>
-                <td class="letter">D</td>
-                <td class="letter">E</td>
-                <td class="letter">F</td>
-                <td class="letter">G</td>
-                <td class="letter">H</td>
-                <td class="letter">I</td>
-                <td class="letter">J</td>
-                <td class="letter">K</td>
-                <td class="letter">L</td>
-                <td class="letter">M</td>
+                <td id="A" class="letter">A</td>
+                <td id="B" class="letter">B</td>
+                <td id="C" class="letter">C</td>
+                <td id="D" class="letter">D</td>
+                <td id="E" class="letter">E</td>
+                <td id="F" class="letter">F</td>
+                <td id="G" class="letter">G</td>
+                <td id="H" class="letter">H</td>
+                <td id="I" class="letter">I</td>
+                <td id="J" class="letter">J</td>
+                <td id="K" class="letter">K</td>
+                <td id="L" class="letter">L</td>
+                <td id="M" class="letter">M</td>
             </tr>
 
             <tr>
-                <td class="letter">N</td>
-                <td class="letter">O</td>
-                <td class="letter">P</td>
-                <td class="letter">Q</td>
-                <td class="letter">R</td>
-                <td class="letter">S</td>
-                <td class="letter">T</td>
-                <td class="letter">U</td>
-                <td class="letter">V</td>
-                <td class="letter">W</td>
-                <td class="letter">X</td>
-                <td class="letter">Y</td>
-                <td class="letter">Z</td>
+                <td id="N" class="letter">N</td>
+                <td id="O" class="letter">O</td>
+                <td id="P" class="letter">P</td>
+                <td id="Q" class="letter">Q</td>
+                <td id="R" class="letter">R</td>
+                <td id="S" class="letter">S</td>
+                <td id="T" class="letter">T</td>
+                <td id="U" class="letter">U</td>
+                <td id="V" class="letter">V</td>
+                <td id="W" class="letter">W</td>
+                <td id="X" class="letter">X</td>
+                <td id="Y" class="letter">Y</td>
+                <td id="Z" class="letter">Z</td>
             </tr>
         </tbody>
     </table>

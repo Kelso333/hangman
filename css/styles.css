@@ -8,19 +8,9 @@ h1, h2 {
     text-align: center;
 }
 
-h3 {
-    font-size: 30px;
-}
-
-h3#message {
+div#wrongLetter {
     font-size: 25px;
     text-align: center;
-}
-
-div#diagram {
-    border: 2px solid red;
-    height: 450px;
-    width: 650px;
 }
 
 div.rightbutton {
@@ -31,13 +21,41 @@ div.rightbutton {
     text-align: center;
 }
 
-div#newgame {
-}
-
 div#hint {
     border: 1px solid green;
     width: 90px;
     height: 40px;
     text-align: center;
-    
+}
+
+#guess {
+    letter-spacing: 25px;
+    font-size: 30px;
+    text-align: center;
+}
+
+table {
+    margin: 0 27%;
+    display: block;
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px; 
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.disable-td {
+    background-color: grey;
+    cursor: default;
+    color: darkgrey;
+}
+
+img#mainpic {
+    width: 300px;
+    height: 400px;
+    display: block;
+    margin: 0 35%;
 }
