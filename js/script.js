@@ -35,9 +35,14 @@ var $message = $('#message');
 
 document.querySelector('table')
     .addEventListener('click', handleLetterClick)
+
+document.getElementById('newgame')
+    .addEventListener('click', initialize)    
    
 
 /*--------- functions --------*/
+
+initialize();
 
 function handleLetterClick(evt) {
     console.log(secretWord);
@@ -65,8 +70,6 @@ function handleLetterClick(evt) {
         render();
     }
 
-initialize(); 
-
 
 function initialize() {
     wrongLetter = 8;
@@ -89,19 +92,10 @@ function initialize() {
     render();
 }
 
-/* function winLoseMsg() {
-    if(guessLetter === secretWord) {
-        $message.html('YOU WIN');
-    } else if (guessLetter !== secretWord) {
-        $message.html('YOU LOSE');
-    } else {
-        $message.html('');
-    }
-} */
-
 function getRandomIntegers(max) {
     return Math.floor(Math.random() * (max +1));
 }
+
 
 function render() {
     $(guess).html(guessLetter);
@@ -110,6 +104,15 @@ function render() {
         $('#' + letter).addClass('disable-td');
     });
     $img.attr('src', 'images/img' + wrongLetter + '.png');
+
+    if(guessLetter === secretWord) {
+        $message.html('YOU WIN');
+    } else if (wrongLetter === 0) {
+        $message.html('YOU LOSE');
+    } else {
+        $message.html('');
+    }
+
 }
 
 
