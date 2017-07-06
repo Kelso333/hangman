@@ -64,14 +64,25 @@ function handleLetterClick(evt) {
          render();
     }
 
-resetGame(); 
+initialize();
 
-function resetGame() {
+function initialize() {
     wrongLetter = 8;
     secretWord = gameWords[getRandomIntegers(gameWords.length-1)];
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
     $('td').removeClass('disable-td');
+
+     if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
+        $hint.html('This is a luxury car');
+    } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
+        $hint.html('This is a fast food place');
+    } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
+        $hint.html('This is a market');
+    } else {
+        $hint.html('');
+    }
+
     render();
 }
 
@@ -88,15 +99,6 @@ function render() {
     });
     $img.attr('src', 'images/img' + wrongLetter + '.png');
 
-    if(gameWords === 'BENZ' || 'JAGUAR' || 'TESLA') {
-        $hint.html('This is a luxury car');
-    } else if (secretWord === 'CHIPOTLE' || 'WENDYS') {
-        $hint.html('This is a fast food place');
-    } else if (secretWord === 'LASSENS' || 'RALPHS') {
-        $hint.html('This is a market');
-    } else {
-        $hint.html('');
-    }
 }
 
 
