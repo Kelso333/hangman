@@ -72,7 +72,7 @@ function handleLetterClick(evt) {
 
 
 function initialize() {
-    wrongLetter = 8;
+    wrongLetter = 9;
     secretWord = gameWords[getRandomIntegers(gameWords.length-1)];
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
