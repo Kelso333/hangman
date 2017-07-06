@@ -9,30 +9,21 @@
      crossorigin="anonymous"></script>
     <title>Hangman Project 1</title>
 </head>
-<body id="wrapper">
+<body>
 
     <h1>Hangman</h1>
 
     <h2>chances left: <div id="wrongLetter"></div></h2>
-    <h2 id="hint"></h2> 
+    <br>
+    <div id="hint"></div> 
 
-    <div id="diagram">
-        <img id="mainpic" src ="images/main.png">
-        <img id="head" class="bodypart" src="">
-        <img id="torso" class="bodypart" src="">
-        <img id="leftarm" class="bodypart" src="">
-        <img id="rightarm" class="bodypart" src="">
-        <img id="leftleg" class="bodypart" src="">
-        <img id="rightleg" class="bodypart" src="">
-        <img id="leftfoot" class="bodypart" src="">
-        <img id="rightfoot" class="bodypart" src="">
-        <img id="redbody" class="bodypart" src="">
-    </div>
-
+    <img src ="" id="hang-img" style="height:300px;">
+    
+    <br><br><br>
     <div id="guess"></div>
-    <br>
-    <br>
-    <br>
+    <div id="message"></div> 
+
+    <br><br><br>
 
     <table id="table">
         <tbody>
@@ -69,12 +60,9 @@
             </tr>
         </tbody>
     </table>
-                      
-                          
-
-    <div id="playagain" class="rightbutton">Play Again</div>
-    <div id="newgame" class="rightbutton">New Game</div>
-
+                               
+    <div id="playagain"></div>
+    <div id="newgame"></div>
 
     <script src="js/script.js"></script>
 

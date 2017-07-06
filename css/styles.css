@@ -13,20 +13,6 @@ div#wrongLetter {
     text-align: center;
 }
 
-div.rightbutton {
-    border: 1px solid blue;
-    width: 90px;
-    height: 40px;
-    text-align: center;
-}
-
-div#hint {
-    border: 1px solid green;
-    width: 90px;
-    height: 40px;
-    text-align: center;
-}
-
 #guess {
     letter-spacing: 25px;
     font-size: 30px;
@@ -34,7 +20,7 @@ div#hint {
 }
 
 table {
-    margin: 0 27%;
+    margin: 0 30%;
     display: block;
 }
 
@@ -52,9 +38,7 @@ td {
     color: darkgrey;
 }
 
-img#mainpic {
-    width: 300px;
-    height: 400px;
+img#hang-img {
     display: block;
-    margin: 0 35%;
+    margin: 0 38%;
 }

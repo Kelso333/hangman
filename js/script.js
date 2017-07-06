@@ -9,9 +9,9 @@ var gameWords = [
     'JAGUAR', 
     'TESLA', 
     'LASSENS', 
-    'RALPHS', 
-    'IN N OUT', 
-    'CHIPOTLE'
+    'RALPHS',  
+    'CHIPOTLE',
+    'WENDYS'
     ];
 
 /*----- app's state (variables) -----*/
@@ -19,30 +19,31 @@ var gameWords = [
 var hint;
 var usedLetter;
 var secretWord; /*holds the randomly chosen word from the words array*/
-var playerSecretWord;
-var wrongLetter;/*intialize to 0; inc. with each wrong guess*/
+var wrongLetter;/*intialize to 9; dec. with each wrong guess*/
 var guessLetter; /*holds the player's guess so far. Initialize to be a string of '_''s - same # as length a secretWord
 
 
 /*----- cached(saving) element references -----*/
 
 var $guess = $('#guess');
-
+var $img = $('#hang-img');
+var $hint = $('#hint');
+var $message = $('#message');
 
 /*---- event listeners -----*/
 
 document.querySelector('table')
-    .addEventListener('click', handleLetterClick);
+    .addEventListener('click', handleLetterClick)
    
 
 /*--------- functions --------*/
 
 function handleLetterClick(evt) {
     console.log(secretWord);
-    var letter = evt.target.textContent;
+    var letter = evt.target.innerHTML;
     console.log(letter);
     if(usedLetter.includes(letter)) {
-
+        return;
     } else {
         usedLetter.push(letter);
     }
@@ -59,51 +60,24 @@ function handleLetterClick(evt) {
         wrongLetter--;
         } else {
             return;
-        }
-
-    render();
-}
-
-function smallHint() {
-    var getHint = document.getElementById('hint');
-    hint = getHint;
-    if(secretWord === 'BENZ') {
-        console.log('This is a luxury vehicle.');
     }
-}
-
-
-/* function pictures() {
-
-    var bodyParts = {
-    imgNine: 'head',
-    imgEight: 'torso',
-    imgSeven: 'left arm',
-    imgSix: 'right arm',
-    imgFive: 'left leg',
-    imgFour: 'right leg',
-    imgThree: 'left foot',
-    imgTwo: 'right foot',
-    imgOne: 'body turns red'
-    };
-} */
-
+         render();
+    }
 
 resetGame(); 
 
-
-function resetGame () {
-    wrongLetter = 9;
+function resetGame() {
+    wrongLetter = 8;
     secretWord = gameWords[getRandomIntegers(gameWords.length-1)];
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
-    bodyParts = {};
     $('td').removeClass('disable-td');
     render();
 }
 
+
 function getRandomIntegers(max) {
-    return Math.floor(Math.random() * max);
+    return Math.floor(Math.random() * (max +1));
 }
 
 function render() {
@@ -111,8 +85,23 @@ function render() {
     $('#wrongLetter').html(wrongLetter);
     usedLetter.forEach(function(letter) {
         $('#' + letter).addClass('disable-td');
-    });    
+    });
+    $img.attr('src', 'images/img' + wrongLetter + '.png');
+
+    if(gameWords === 'BENZ' || 'JAGUAR' || 'TESLA') {
+        $hint.html('This is a luxury car');
+    } else if (secretWord === 'CHIPOTLE' || 'WENDYS') {
+        $hint.html('This is a fast food place');
+    } else if (secretWord === 'LASSENS' || 'RALPHS') {
+        $hint.html('This is a market');
+    } else {
+        $hint.html('');
+    }
 }
+
+
+
+
 
 
 
