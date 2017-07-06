@@ -16,6 +16,7 @@ var gameWords = [
 
 /*----- app's state (variables) -----*/
 
+
 var hint;
 var usedLetter;
 var secretWord; /*holds the randomly chosen word from the words array*/
@@ -58,23 +59,45 @@ function handleLetterClick(evt) {
         }
     } else if (wrongLetter > 0) {
         wrongLetter--;
-        } else {
-            return;
+    } else {
+        return;
     }
-         render();
+        render();
     }
 
-resetGame(); 
+initialize(); 
 
-function resetGame() {
+
+function initialize() {
     wrongLetter = 8;
     secretWord = gameWords[getRandomIntegers(gameWords.length-1)];
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
     $('td').removeClass('disable-td');
+    console.log('secretWord', secretWord);
+    
+    if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
+        $hint.html('This word is a luxury car');
+    } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
+        $hint.html('This word is a fast food place');
+    } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
+        $hint.html('This word is a market');
+    } else {
+        $hint.html('');
+    }
+
     render();
 }
 
+/* function winLoseMsg() {
+    if(guessLetter === secretWord) {
+        $message.html('YOU WIN');
+    } else if (guessLetter !== secretWord) {
+        $message.html('YOU LOSE');
+    } else {
+        $message.html('');
+    }
+} */
 
 function getRandomIntegers(max) {
     return Math.floor(Math.random() * (max +1));
@@ -87,16 +110,6 @@ function render() {
         $('#' + letter).addClass('disable-td');
     });
     $img.attr('src', 'images/img' + wrongLetter + '.png');
-
-    if(gameWords === 'BENZ' || 'JAGUAR' || 'TESLA') {
-        $hint.html('This is a luxury car');
-    } else if (secretWord === 'CHIPOTLE' || 'WENDYS') {
-        $hint.html('This is a fast food place');
-    } else if (secretWord === 'LASSENS' || 'RALPHS') {
-        $hint.html('This is a market');
-    } else {
-        $hint.html('');
-    }
 }
 
 
