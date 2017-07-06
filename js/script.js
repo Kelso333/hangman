@@ -16,6 +16,7 @@ var gameWords = [
 
 /*----- app's state (variables) -----*/
 
+
 var hint;
 var usedLetter;
 var secretWord; /*holds the randomly chosen word from the words array*/
@@ -58,10 +59,10 @@ function handleLetterClick(evt) {
         }
     } else if (wrongLetter > 0) {
         wrongLetter--;
-        } else {
-            return;
+    } else {
+        return;
     }
-         render();
+        render();
     }
 
 initialize();
@@ -86,6 +87,15 @@ function initialize() {
     render();
 }
 
+/* function winLoseMsg() {
+    if(guessLetter === secretWord) {
+        $message.html('YOU WIN');
+    } else if (guessLetter !== secretWord) {
+        $message.html('YOU LOSE');
+    } else {
+        $message.html('');
+    }
+} */
 
 function getRandomIntegers(max) {
     return Math.floor(Math.random() * (max +1));
@@ -98,7 +108,6 @@ function render() {
         $('#' + letter).addClass('disable-td');
     });
     $img.attr('src', 'images/img' + wrongLetter + '.png');
-
 }
 
 
