@@ -4,10 +4,10 @@
 
 This game is a Tom and Jerry Hangman with words related to the cartoon. In this game you will receive a small clue as to what the word is related to (whether it's Tom or Jerry). If the winner wins, a "You Win" message in green will appear, and if the winner loses, a "You Lose" message in red will appear. To get a new word you can click "New Game" as much as you want. You have your chances on the left letting you know when Tom gets hit with the tennis ball. 
 
-<img src="http://imgur.com/nNPVaM3">
-<img src="http://imgur.com/OaZgpEk">
-<img src="http://imgur.com/YkPrZSA">
-<img src="http://imgur.com/GzrLsnn">
+![alt tag](http://i.imgur.com/nNPVaM3.png "screenshot1")
+![alt tag](http://i.imgur.com/OaZgpEk.png "screenshot1")
+![alt tag](http://i.imgur.com/GzrLsnn.png "screenshot1")
+![alt tag](http://i.imgur.com/YkPrZSA.png "screenshot1")
 
 
 <h3>ii. Technologies Used</h3>
