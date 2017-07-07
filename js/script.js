@@ -45,7 +45,7 @@ function handleLetterClick(evt) {
     } else {
         usedLetter.push(letter);
     }
-    if(secretWord.includes(letter)) {s
+    if(secretWord.includes(letter)) {
         var position = secretWord.indexOf(letter);
         while (position >= 0) {
             guessLetter = guessLetter.split('');
