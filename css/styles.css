@@ -1,6 +1,4 @@
 
-
-
 h1 {
     font-size: 50px;
     text-align: center;
@@ -10,8 +8,8 @@ h1 {
 
 h2 {
     position: absolute;
-    top: 65%;
-    left: 27%;
+    top: 66%;
+    left: 28%;
     text-align: center;
     font-size: 15px;
     font-family: 'Carter One', cursive;
@@ -41,7 +39,7 @@ h2 {
     font-size: 20px;
     position: absolute;
     top: 63%;
-    left: 40.6%;
+    left: 40%;
     text-align: center;
     font-family: 'Carter One', cursive;
 }
@@ -63,9 +61,9 @@ td {
 }
 
 .disable-td {
-    background-color: grey;
+    background-color: darkgrey;
     cursor: default;
-    color: darkgrey;
+    color: #f4d211;
 }
 
 #hang-img {
@@ -76,8 +74,8 @@ td {
 
 #newgame {
     position: absolute;
-    top: 67.6%;
-    left: 66%;
+    top: 69%;
+    left: 63%;
     line-height: 14px;
     width: 75px;
     height: 40px;

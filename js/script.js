@@ -35,12 +35,10 @@ var $message = $('#message');
 
 $('table').on('click', 'td', handleLetterClick)
 $('#newgame').on('click', initialize)    
-   
 
 /*--------- functions --------*/
 
 initialize();
-
 function handleLetterClick(evt) {
     console.log(secretWord);
     var letter = evt.target.innerHTML;
@@ -79,7 +77,7 @@ function initialize() {
     if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
         $hint.html('this word is a luxury car');
     } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
-        $hint.html('this word is a fast food');
+        $hint.html('this word is a fast food place');
     } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
         $hint.html('this word is a market');
     } else {
