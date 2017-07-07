@@ -33,11 +33,8 @@ var $message = $('#message');
 
 /*---- event listeners -----*/
 
-document.querySelector('table')
-    .addEventListener('click', handleLetterClick)
-
-document.getElementById('newgame')
-    .addEventListener('click', initialize)    
+$('table').on('click', 'td', handleLetterClick)
+$('#newgame').on('click', initialize)    
    
 
 /*--------- functions --------*/
@@ -80,11 +77,11 @@ function initialize() {
     console.log('secretWord', secretWord);
     
     if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
-        $hint.html('This word is a luxury car');
+        $hint.html('this word is a luxury car');
     } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
-        $hint.html('This word is a fast food place');
+        $hint.html('this word is a fast food');
     } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
-        $hint.html('This word is a market');
+        $hint.html('this word is a market');
     } else {
         $hint.html('');
     }
@@ -106,11 +103,14 @@ function render() {
     $img.attr('src', 'images/img' + wrongLetter + '.png');
 
     if(guessLetter === secretWord) {
-        $message.html('YOU WIN');
+        $message.html('YOU WIN').css('color', 'green');
+        $('table').css('visibility', 'hidden');
     } else if (wrongLetter === 0) {
-        $message.html('YOU LOSE');
+        $message.html('YOU LOSE').css('color', 'red');
+        $('table').css('visibility', 'hidden');
     } else {
         $message.html('');
+        $('table').css('visibility', 'visible');
     }
 
 }
