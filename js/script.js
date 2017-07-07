@@ -69,18 +69,19 @@ function initialize() {
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
     $('td').removeClass('disable-td');
-     if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
-        $hint.html('This is a luxury car');
-    } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
-        $hint.html('This is a fast food place');
-    } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
-        $hint.html('This is a market');
+    console.log('secretWord', secretWord);
+    
+    if(secretWord === 'CHEESE' || secretWord === 'MOUSE' || secretWord === 'JERRY' || secretWord === 'BROWN') {
+        $hint.html('this word relates to Jerry');
+    } else if (secretWord === 'CAT' || secretWord === 'CHASE' || secretWord === 'TOM' || secretWord === 'GREY') {
+        $hint.html('this word relates to Tom');
     } else {
         $hint.html('');
     }
 
     render();
-} //end of initialize function
+}
+
 
 function getRandomIntegers(max) {
     return Math.floor(Math.random() * (max +1));
