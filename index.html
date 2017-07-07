@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
      crossorigin="anonymous"></script>
-    <title>Hangman Project 1</title>
+    <title>Tom and Jerry Hangman</title>
+    <style>
+        body { 
+        background-color: black;
+        background-image: url('images/jerrycheese.jpg');
+        background-size: 103%;
+        background-repeat: no-repeat;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>Tom and Jerry Hangman</h1>
+    <h2>chances left: <div id="wrongLetter"></p></div></h2><br>
 
-    <h1>Hangman</h1>
+    <img src ="" id="hang-img" style="height:300px;"> <br>
+    <div id="hint"></div><br>
 
-    <h2>chances left: <div id="wrongLetter"></div></h2>
-    <div id="hint"></div> 
-    <br>
-    <br>
-
-    <img src ="" id="hang-img" style="height:300px;">
-    
-    <br><br><br>
     <div id="guess"></div>
-    <div id="message"></div> 
+    <div id="newgame">new game</div><br>
 
-    <br><br><br>
+    <div id="message"></div><br>
 
     <table id="table">
         <tbody>
@@ -61,9 +67,7 @@
             </tr>
         </tbody>
     </table>
-    <div id="newgame"></div>
 
-    <script src="js/script.js"></script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
