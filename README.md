@@ -16,6 +16,7 @@ This game is a Tom and Jerry Hangman with words related to the cartoon. In this 
 <li>CSS</li>
 <li>JavaScript</li>
 <li>jQuery</li>
+<li>Illustrator</li>
 </ul>
 
 <h3>iii. Getting Started</h3>
