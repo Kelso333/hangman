@@ -1,18 +1,16 @@
 
 /*----- constants -----*/
 
-console.log('loaded');
-
-
 var gameWords = [
-    'BENZ', 
-    'JAGUAR', 
-    'TESLA', 
-    'LASSENS', 
-    'RALPHS',  
-    'CHIPOTLE',
-    'WENDYS'
-    ];
+    'CHEESE', 
+    'MOUSE', 
+    'JERRY', 
+    'BROWN', 
+    'CAT',  
+    'CHASE',
+    'TOM',
+    'GREY'
+];
 
 /*----- app's state (variables) -----*/
 
@@ -40,9 +38,7 @@ $('#newgame').on('click', initialize)
 
 initialize();
 function handleLetterClick(evt) {
-    console.log(secretWord);
     var letter = evt.target.innerHTML;
-    console.log(letter);
     if(usedLetter.includes(letter)) {
         return;
     } else {
@@ -54,8 +50,7 @@ function handleLetterClick(evt) {
             guessLetter = guessLetter.split('');
             guessLetter[position] = letter;
             guessLetter = guessLetter.join('');
-            console.log(guessLetter);
-            position = secretWord.indexOf(letter, position + 1);  
+            position = secretWord.indexOf(letter, position + 1);
         }
     } else if (wrongLetter > 0) {
         wrongLetter--;
@@ -74,12 +69,10 @@ function initialize() {
     $('td').removeClass('disable-td');
     console.log('secretWord', secretWord);
     
-    if(secretWord === 'BENZ' || secretWord === 'JAGUAR' || secretWord === 'TESLA') {
-        $hint.html('this word is a luxury car');
-    } else if (secretWord === 'CHIPOTLE' || secretWord === 'WENDYS') {
-        $hint.html('this word is a fast food place');
-    } else if (secretWord === 'LASSENS' || secretWord === 'RALPHS') {
-        $hint.html('this word is a market');
+    if(secretWord === 'CHEESE' || secretWord === 'MOUSE' || secretWord === 'JERRY' || secretWord === 'BROWN') {
+        $hint.html('this word relates to Jerry');
+    } else if (secretWord === 'CAT' || secretWord === 'CHASE' || secretWord === 'TOM' || secretWord === 'GREY') {
+        $hint.html('this word relates to Tom');
     } else {
         $hint.html('');
     }
