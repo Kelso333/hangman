@@ -16,10 +16,19 @@ h2 {
 }
 
 #message {
-    font-size: 30px;
+    font-size: 27px;
     position: absolute;
     top: 80%;
     left: 40%;
+    font-family: 'Carter One', cursive;
+    text-align: center;
+}
+
+#winMessage {
+    font-size: 30px;
+    position: absolute;
+    top: 80%;
+    left: 45%;
     font-family: 'Carter One', cursive;
     text-align: center;
 }
@@ -29,7 +38,6 @@ h2 {
     font-size: 30px;
     text-align: center;
     font-family: 'Carter One', cursive;
-    /*border: 1px solid black;*/
     width: 360px;
     position: absolute;
     top: 70%;

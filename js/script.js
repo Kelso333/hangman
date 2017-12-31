@@ -28,7 +28,7 @@ var $guess = $('#guess');
 var $img = $('#hang-img');
 var $hint = $('#hint');
 var $message = $('#message');
-var $answer = $('#answer');
+var $winMessage = $('#winMessage');
 
 /*---- event listeners -----*/
 
@@ -97,13 +97,14 @@ function render() {
     $img.attr('src', 'images/img' + wrongLetter + '.png');
 
     if(guessLetter === secretWord) {
-				$message.html('YOU WIN').css('color', 'green');
+				$winMessage.html('YOU WIN').css('color', 'green');
         $('table').css('visibility', 'hidden');
     } else if (wrongLetter === 0) {
 				$message.html('YOU LOSE. ' + '<br>' + 'The answer is ' + secretWord).css('color', 'red');
         $('table').css('visibility', 'hidden');
     } else {
-        $message.html('');
+				$message.html('');
+				$winMessage.html('');
         $('table').css('visibility', 'visible');
     } //end of if/else statement
 } //end of initialize function
