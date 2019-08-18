@@ -8,7 +8,7 @@ h1 {
 
 h2 {
     position: absolute;
-    top: 66%;
+    top: 68%;
     left: 28%;
     text-align: center;
     font-size: 15px;
@@ -16,11 +16,21 @@ h2 {
 }
 
 #message {
-    font-size: 40px;
+    font-size: 27px;
     position: absolute;
     top: 80%;
-    left: 43%;
+    left: 40%;
     font-family: 'Carter One', cursive;
+    text-align: center;
+}
+
+#winMessage {
+    font-size: 30px;
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    font-family: 'Carter One', cursive;
+    text-align: center;
 }
 
 #guess {
@@ -28,7 +38,6 @@ h2 {
     font-size: 30px;
     text-align: center;
     font-family: 'Carter One', cursive;
-    /*border: 1px solid black;*/
     width: 360px;
     position: absolute;
     top: 70%;
@@ -39,15 +48,16 @@ h2 {
     font-size: 20px;
     position: absolute;
     top: 63%;
-    left: 40%;
+    left: 35%;
     text-align: center;
     font-family: 'Carter One', cursive;
+    color: grey;
 }
 
 table {
     display: block;
     position: absolute;
-    top: 80%;
+    top: 82%;
     left: 31.2%;
 }
 
@@ -74,7 +84,7 @@ td {
 
 #newgame {
     position: absolute;
-    top: 69%;
+    top: 71%;
     left: 63%;
     line-height: 14px;
     width: 75px;

@@ -28,6 +28,7 @@ var $guess = $('#guess');
 var $img = $('#hang-img');
 var $hint = $('#hint');
 var $message = $('#message');
+var $winMessage = $('#winMessage');
 
 /*---- event listeners -----*/
 
@@ -41,17 +42,18 @@ initialize();
 function handleLetterClick(evt) {
     var letter = evt.target.innerHTML;
     if(usedLetter.includes(letter)) {
-        return;
+      return;
     } else {
-        usedLetter.push(letter);
+      usedLetter.push(letter);
     }
+
     if(secretWord.includes(letter)) {
         var position = secretWord.indexOf(letter);
         while (position >= 0) {
-            guessLetter = guessLetter.split('');
-            guessLetter[position] = letter;
-            guessLetter = guessLetter.join('');
-            position = secretWord.indexOf(letter, position + 1);
+          guessLetter = guessLetter.split('');
+          guessLetter[position] = letter;
+          guessLetter = guessLetter.join('');
+          position = secretWord.indexOf(letter, position + 1);
         } //end of while statement
     } else if (wrongLetter > 0) {
         wrongLetter--;
@@ -69,19 +71,17 @@ function initialize() {
     guessLetter = '_'.repeat(secretWord.length);
     usedLetter = [];
     $('td').removeClass('disable-td');
-    console.log('secretWord', secretWord);
     
     if(secretWord === 'CHEESE' || secretWord === 'MOUSE' || secretWord === 'JERRY' || secretWord === 'BROWN') {
-        $hint.html('this word relates to Jerry');
+        $hint.html("this word relates to Jerry or Jerry's name");
     } else if (secretWord === 'CAT' || secretWord === 'CHASE' || secretWord === 'TOM' || secretWord === 'GREY') {
-        $hint.html('this word relates to Tom');
+        $hint.html("this word relates to Tom or Tom's name");
     } else {
         $hint.html('');
     }
 
     render();
 }
-
 
 function getRandomIntegers(max) {
     return Math.floor(Math.random() * (max +1));
@@ -97,15 +97,15 @@ function render() {
     $img.attr('src', 'images/img' + wrongLetter + '.png');
 
     if(guessLetter === secretWord) {
-        $message.html('YOU WIN').css('color', 'green');
+				$winMessage.html('YOU WIN').css('color', 'green');
         $('table').css('visibility', 'hidden');
     } else if (wrongLetter === 0) {
-        $message.html('YOU LOSE').css('color', 'red');
+				$message.html('YOU LOSE. ' + '<br>' + 'The answer is ' + secretWord).css('color', 'red');
         $('table').css('visibility', 'hidden');
     } else {
-        $message.html('');
+				$message.html('');
+				$winMessage.html('');
         $('table').css('visibility', 'visible');
-    
     } //end of if/else statement
 } //end of initialize function
 
